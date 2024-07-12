@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Document(collection = "activate")
+@Document(collection = "ExplorePhase")
 public class ExplorePhase implements Serializable {
     @Id
     String id;
