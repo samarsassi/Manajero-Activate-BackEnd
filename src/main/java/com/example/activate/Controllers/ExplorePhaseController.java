@@ -2,42 +2,44 @@ package com.example.activate.Controllers;
 
 import com.example.activate.Entities.ExplorePhase;
 import com.example.activate.Services.ExplorePhaseService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/explorePhases")
-@AllArgsConstructor
 public class ExplorePhaseController {
 
     private final ExplorePhaseService explorePhaseService;
 
+    @Autowired
+    public ExplorePhaseController(ExplorePhaseService explorePhaseService) {
+        this.explorePhaseService = explorePhaseService;
+    }
+
     @GetMapping
     public List<ExplorePhase> getAllExplorePhases() {
-        return explorePhaseService.getAllExplorePhases();
+        return explorePhaseService.findAll();
     }
 
     @GetMapping("/{id}")
     public ExplorePhase getExplorePhaseById(@PathVariable String id) {
-        return explorePhaseService.getExplorePhaseById(id);
+        return explorePhaseService.findById(id);
     }
 
     @PostMapping("/addE")
-    public String createExplorePhase(@RequestBody ExplorePhase explorePhase) {
-        explorePhaseService.saveExplorePhase(explorePhase);
-        return "Added successfully";
+    public ExplorePhase createExplorePhase(@RequestBody ExplorePhase explorePhase) {
+        return explorePhaseService.save(explorePhase);
     }
 
     @PutMapping("/updatePhase")
-    public String updateExplorePhase(@RequestBody ExplorePhase explorePhase) {
-        explorePhaseService.saveExplorePhase(explorePhase);
-        return "Updated successfully";
+    public ExplorePhase updateExplorePhase(@RequestBody ExplorePhase explorePhase) {
+        return explorePhaseService.save(explorePhase);
     }
 
     @DeleteMapping("/{id}")
     public void deleteExplorePhase(@PathVariable String id) {
-        explorePhaseService.deleteExplorePhase(id);
+        explorePhaseService.deleteById(id);
     }
 }
