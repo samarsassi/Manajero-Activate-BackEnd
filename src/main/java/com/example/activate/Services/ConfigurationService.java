@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
 public class ConfigurationService implements IConfigurationService {
-    @Autowired
     private ConfigurationRepository configurationRepository;
+
+
     public Configuration createConfiguration(Configuration configuration) {
         return configurationRepository.save(configuration);
     }
