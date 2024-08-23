@@ -20,10 +20,26 @@ public class Projects {
     String id;
     String title;
     Problematic problematic;
+    String status;
     String statementWork;
     LocalDate dateSubmitted;
     String projectManager;
     boolean archived;
+    //Phases
+    DiscoverPhase discoverPhase;
+    ProjectPreparation preparationPhase;
+    ExplorePhase explorePhase;
+    Realize realizePhase;
+    DeployPhase deployPhase;
+
+    public void setProblematic(Problematic problematic) {
+        this.problematic = problematic;
+    }
+
+    public void setPreparationPhase(ProjectPreparation preparationPhase) {
+        this.preparationPhase = preparationPhase;
+    }
+
     public static class Problematic {
         @JsonProperty("id")
         private String id;
@@ -33,5 +49,11 @@ public class Projects {
 
         @JsonProperty("description")
         private String description;
+
+        public Problematic(String id, String name, String description) {
+            this.id = id;
+            this.name = name;
+            this.description = description;
+        }
     }
 }

@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProjectPreparation {
     @Id
     String id;
+    String Projectid;
     String startDate;
     String endDate; // Date de fin du projet
     String projectManager; // Nom du chef de projet
