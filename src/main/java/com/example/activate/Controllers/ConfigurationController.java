@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
-@AllArgsConstructor
+
 @RestController
 @RequestMapping("/api/configurations")
 public class ConfigurationController {
