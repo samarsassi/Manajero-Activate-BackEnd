@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Realize {
     @Id
     private String id;
-
+    String Projectid;
     // Configuration fields
     private String configName;
     private String configStatus;

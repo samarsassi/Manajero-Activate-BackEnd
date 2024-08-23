@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class ExplorePhase implements Serializable {
     @Id
     String id;
-
+    String Projectid;
     String finalizedBusinessProcesses;
 
     String keyDeliverables;
