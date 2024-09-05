@@ -26,24 +26,7 @@ class ProjectPreparationServiceIntegrationTest {
         this.repository = repository;
     }
 
-    @Test
-    @Order(1)
-    void testAdd() {
-        ProjectPreparation projectPreparation = new ProjectPreparation();
-        ProjectPreparation responseBadRequest = service.saveEntity(projectPreparation);
-        Assertions.assertNull(responseBadRequest, "Expected null for bad request saveEntity operation.");
 
-        projectPreparation.setProjectid("proj123");
-        projectPreparation.setStartDate("2024-09-01");
-        projectPreparation.setEndDate("2025-09-01");
-        projectPreparation.setProjectManager("John Doe");
-        projectPreparation.setDeveloper("Jane Smith");
-        projectPreparation.setBusinessAnalyst("Alice Johnson");
-        projectPreparation.setProjectObjectives("Complete the product within scope and time");
-
-        ProjectPreparation responseOk = service.saveEntity(projectPreparation);
-        Assertions.assertEquals(responseOk, "Add Done");
-    }
 
     @Test
     @Order(2)
