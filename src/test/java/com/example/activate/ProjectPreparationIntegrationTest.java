@@ -31,8 +31,6 @@ class ProjectPreparationServiceIntegrationTest {
     void testAdd() {
         ProjectPreparation projectPreparation = new ProjectPreparation();
         ProjectPreparation responseBadRequest = service.saveEntity(projectPreparation);
-
-// Assuming the service returns null when there is a bad request (e.g., validation fails)
         Assertions.assertNull(responseBadRequest, "Expected null for bad request saveEntity operation.");
 
         projectPreparation.setProjectid("proj123");
